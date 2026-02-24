@@ -1,0 +1,19 @@
+services:
+  app:
+    image: analytics-api:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile
+        - action: rebuild
+          path: requirements.txt
+        - action: rebuild
+          path: compose.yaml
+        - action: rebuild
+          path: src/main.py
+    restart: always
