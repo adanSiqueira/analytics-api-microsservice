@@ -1,3 +1,5 @@
 /venv
 *.pyc
 /.vscode
+docker-compose.dev.yaml
+.env
